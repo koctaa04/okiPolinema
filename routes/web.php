@@ -28,3 +28,15 @@ Route::get('/oki', function () {
         'title' => 'oki'
     ]);
 });
+Route::get('/register', function () {
+    return view('homepage.register', [
+        'title' => 'oki'
+    ]);
+});
+
+// DASHBOARD
+Route::get('/dashboard', function () {
+    return view('dashboard.index', [
+        'title' => 'oki'
+    ]);
+});

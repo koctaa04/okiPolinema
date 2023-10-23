@@ -1,4 +1,4 @@
-@extends('layouts.homepage.frontend')
+@extends('layouts.layouts-homepage')
 
 @section('content')
   <main id="main">
@@ -19,7 +19,7 @@
         <div class="container">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Get a Quote</li>
+            <li>Register</li>
           </ol>
         </div>
       </nav>
@@ -31,11 +31,11 @@
 
         <div class="row g-0">
 
-          <div class="col-lg-5 quote-bg" style="background-image: url(assets/img/quote-bg.jpg);"></div>
+          <div class="col-lg-5 quote-bg" style="background-image: url(assets-homepage/img/quote-bg.jpg);"></div>
 
           <div class="col-lg-7">
             <form action="forms/quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
+              <h3>Register</h3>
               <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
               <div class="row gy-4">
 

@@ -1,4 +1,4 @@
-@extends('layouts.homepage.frontend')
+@extends('layouts.layouts-homepage')
 @section('content')
     <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">

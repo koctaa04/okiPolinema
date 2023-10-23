@@ -1,4 +1,4 @@
-@extends('layouts.homepage.frontend')
+@extends('layouts.layouts-homepage')
 
 @section('content')
 <main id="main">
