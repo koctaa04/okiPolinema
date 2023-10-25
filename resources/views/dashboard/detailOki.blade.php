@@ -122,7 +122,9 @@
             <!-- Illustrations -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex justify-content-between">
-                    <h5 class="mt-2 font-weight-bold text-primary">Dewan Perwakilan Mahasiswa (DPM)</h5>
+                        <h5 class="mt-2 font-weight-bold text-primary">Dewan Perwakilan Mahasiswa (DPM)
+                        </h5>
+
                     <!-- Button trigger modal -->
                     <button class="btn btn-primary" data-toggle="modal" data-target="#editBiodataOKI">Edit</button>
                     <!-- Modal -->
@@ -198,7 +200,7 @@
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-start mb-4">
                 <h1 class="h3 mb-0 mx-4 text-gray-800">DPM's Activity</h1>
-                <i class="fas fa-solid fa-trophy fa-2x text-gray-300"></i>
+                <i class="fas fa-solid fa-chart-line fa-2x text-gray-300"></i>
             </div>
             <div class="row">
                 <div class="col-lg-4">
@@ -385,8 +387,9 @@
 
             <!-- DataTales Example -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h5 class="m-0 font-weight-bold text-primary">DPM's Member</h5>
+                    <div class="card-header py-3 d-sm-flex align-items-center justify-content-start mb-4">
+                        <h5 class="m-0 mx-4 font-weight-bold text-primary">DPM's Member</h5>
+                        <i class="fas fa-solid fa-users fa-2x text-gray-300"></i>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

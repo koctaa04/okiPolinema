@@ -53,8 +53,8 @@
         <div id="lt" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Consist of:</h6>
-                <a class="collapse-item" href="/dashboard/dpm">DPM</a>
-                <a class="collapse-item" href="/dashboard/bem">BEM</a>
+                <a class="collapse-item" href="/dashboard/detailOki/1">DPM</a>
+                <a class="collapse-item" href="/dashboard/detailOki/1">BEM</a>
             </div>
         </div>
     </li>
