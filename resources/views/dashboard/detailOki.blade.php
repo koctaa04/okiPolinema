@@ -25,20 +25,69 @@
                                 <p class="font-weight-light" style="font-size: .8rem; margin: 0;">{{ $prestasi->deskripsi_lomba }}</p>
                             </div>
                             <div class="text-xs font-weight-bold text-primary">
-                                {{ implode(', ', json_decode($prestasi->peserta_lomba)) }}
-                            </div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Abdul Rozak - D-IV Teknik Informatika 2022
-                            </div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Bayu Setiwan - D-IV Sistem Informasi Bisnis 2022
+                                {{ $prestasi->peserta_lomba }}
                             </div>
                             <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya
+                                {{ $prestasi->waktu_pelaksanaan }} - {{ $prestasi->tempat_pelaksanaan }}
                             </div>
                             <div class="row mt-3">
                                 <div class="col-6">
-                                    <button class="btn btn-sm btn-warning btn-block" type="button">Edit</button>
+                                    <!-- Button trigger modal -->
+                                    <button class="btn btn-sm btn-warning btn-block" data-toggle="modal" data-target="#editPrestasiOKI">Edit</button>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal  fade" id="editPrestasiOKI" tabindex="-1" aria-labelledby="editPrestasiOKILabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="editPrestasiOKILabel">Edit {{ $detailOki->akronim_oki }}'s Prestasi</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form method="post" action="/dashboard/editPrestasi/{{ $prestasi->id }}">
+                                            @csrf
+                                            <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col form-group">
+                                                        <label for="nama_prestasi">Nama Prestasi</label>
+                                                        <input type="text" class="form-control" name="nama_prestasi" id="nama_prestasi"
+                                                            placeholder="Example : Melukis Open 2023" value="{{ $prestasi->nama_prestasi }}"/>
+                                                        </div>
+                                                        <div class="col form-group">
+                                                            <label for="juara">Juara Ke</label>
+                                                            <input type="text" class="form-control" name="juara" id="juara"
+                                                                placeholder="Example : 1st Winner" value="{{ $prestasi->juara }}" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="deskripsi_lomba">Deskripsi Lomba</label>
+                                                        <textarea class="form-control" name="deskripsi_lomba" id="deskripsi_lomba" rows="3">{{ $prestasi->deskripsi_lomba }}</textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="peserta_lomba">Peserta Lomba</label>
+                                                        <textarea class="form-control" name="peserta_lomba" id="peserta_lomba" rows="3">{{ $prestasi->peserta_lomba }}</textarea>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col form-group">
+                                                            <label for="waktu_pelaksanaan">waktu Pelaksanaan</label>
+                                                            <input type="date" class="form-control" name="waktu_pelaksanaan" id="waktu_pelaksanaan" value="{{ $prestasi->waktu_pelaksanaan }}" />
+                                                        </div>
+                                                        <div class="col form-group">
+                                                            <label for="tempat_pelaksanaan">Tempat Pelaksanaan</label>
+                                                            <input type="text" class="form-control" name="tempat_pelaksanaan" id="tempat_pelaksanaan"
+                                                                placeholder="Example : Surabaya" value="{{ $prestasi->tempat_pelaksanaan }}" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-6">
                                     <button class="btn btn-sm btn-danger btn-block" type="button">Delete</button>
@@ -64,33 +113,45 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="editBiodataOKILabel">Edit Biodata DPM</h5>
+                                    <h5 class="modal-title" id="editBiodataOKILabel">Edit {{ $detailOki->akronim_oki }}'s Profile</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+                                <form method="post" action="/dashboard/editBiodata/{{ $detailOki->id }}">
+                                @csrf
                                 <div class="modal-body">
-                                    <form>
                                         <div class="form-group">
-                                            <label for="nameOKI">Name</label>
-                                            <input type="text" class="form-control" id="nameOKI"
-                                                placeholder="Badan Eksekutif Mahasiswa [nama OKI]" />
+                                            <label for="nama_oki">Nama OKI</label>
+                                            <input type="text" class="form-control" name="nama_oki" id="nama_oki"
+                                                placeholder="Example : Badan Eksekutif Mahasiswa" value="{{ $detailOki->nama_oki }}"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="acronym">Acronym</label>
-                                            <input type="text" class="form-control" id="acronym"
-                                                placeholder="BEM [acronym OKI]" />
+                                            <label for="akronim_oki">Akronim OKI</label>
+                                            <input type="text" class="form-control" name="akronim_oki" id="akronim_oki"
+                                                placeholder="Example : BEM" value="{{ $detailOki->akronim_oki }}" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="description">Example textarea</label>
-                                            <textarea class="form-control" id="description" rows="3"></textarea>
+                                            <label for="sejarah">Sejarah OKI</label>
+                                            <textarea class="form-control" name="sejarah" id="sejarah" rows="3">{{ $detailOki->sejarah }}</textarea>
                                         </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="benefit">Benefit</label>
+                                                <textarea class="form-control" name="benefit" id="benefit" rows="3">{{ $detailOki->benefit }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="info_terkini">Info terkini</label>
+                                            <input type="text" class="form-control" name="info_terkini" id="info_terkini"
+                                                placeholder="Example : OPEN RECRUITMENT ON JULY 2023" value="{{ $detailOki->info_terkini }}" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -102,13 +163,16 @@
                     </div>
                     <h3>{{ $detailOki->nama_oki }} ({{ $detailOki->akronim_oki }})</h3>
                     <p>{{ $detailOki->pengertian }}</p>
-                    <p>{{ $detailOki->sejarah }}</p>
-                    <p>{{ $detailOki->benefit }}</p>
+                    <p>Sejarah : {{ $detailOki->sejarah }}</p>
+                    <p>Benefit : {{ $detailOki->benefit }}</p>
                     <ul>
                         <li><span>Aut eum totam accusantium voluptatem.</span></li>
                         <li><span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
                         <li><span>Ullamco laboris nisi ut aliquip ex ea</span></li>
                     </ul>
+                    <div class="alert alert-info" role="alert">
+                        Information : "{{ $detailOki->info_terkini }}"
+                    </div>
                 </div>
             </div>
 

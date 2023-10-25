@@ -13,8 +13,9 @@ class CreatePrestasiOkisTable extends Migration
             $table->string('nama_prestasi');
             $table->text('deskripsi_lomba');
             $table->string('juara');
-            $table->date('tempat_waktu_pelaksanaan');
-            $table->json('peserta_lomba');
+            $table->date('waktu_pelaksanaan');
+            $table->string('tempat_pelaksanaan');
+            $table->string('peserta_lomba');
             $table->timestamps();
         });
     }

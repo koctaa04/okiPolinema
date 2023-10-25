@@ -14,10 +14,9 @@ class OkisFactory extends Factory
             'nama_oki' => $this->faker->word,
             'akronim_oki' => $this->faker->word,
             'struktur_divisi' => 'Sample Structure.jpg',
-            'sejarah' => 'Sejarah DPM Lorem ipsum...',
+            'sejarah' => 'BEM dibentuk pada tanggal 20 Januari 2023. lorem ipsum',
             'pengertian' => 'DPM adalah Lorem ipsum...',
-            'kegiatan' => 'Sample Kegiatan',
-            'benefit' => json_encode(['Manfaat/Keunggulan DPM adalah Lorem ipsum...']),
+            'benefit' => json_encode(['Banyak yang akan didapatkan, Contohnya antara lain; punya jiwa kepemimpinan, belajar cara berkolaborasi']),
             'info_terkini' => 'OPEN RECRUITMENT ON JULY 2023',
             'kategori_oki' => '1'
         ];

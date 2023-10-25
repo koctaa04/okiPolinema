@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('struktur_divisi');
             $table->string('sejarah');
             $table->string('pengertian');
-            $table->string('kegiatan');
             $table->json('benefit');
             $table->string('info_terkini');
             $table->string('kategori_oki');

@@ -31,7 +31,6 @@ class DatabaseSeeder extends Seeder
             'struktur_divisi' => 'Sample Structure.jpg',
             'sejarah' => 'Sejarah DPM Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'pengertian' => 'DPM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
-            'kegiatan' => 'Sample Kegiatan',
             'benefit' => json_encode(['Manfaat/Keunggulan DPM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.']),
             'info_terkini' => 'OPEN RECRUITMENT ON JULY 2023',
             'kategori_oki' => '1',

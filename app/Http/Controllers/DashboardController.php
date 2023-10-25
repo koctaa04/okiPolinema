@@ -26,8 +26,8 @@ class DashboardController extends Controller
             $title = 'detail_ukm';
         }
 
-        $prestasiData = PrestasiOkis::all();
-        $kegiatanData = KegiatanOkis::all();
+        $prestasiData = PrestasiOkis::where('id_oki', $id)->get();
+        $kegiatanData = KegiatanOkis::where('id_oki', $id)->get();
 
         return view('dashboard.detailOki', [
             'title' => $title,

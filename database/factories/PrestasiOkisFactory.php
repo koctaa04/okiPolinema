@@ -24,12 +24,10 @@ class PrestasiOkisFactory extends Factory
             'nama_prestasi' => $this->faker->sentence,
             'deskripsi_lomba' => $this->faker->paragraph,
             'juara' => $juaraLabel,
-            'tempat_waktu_pelaksanaan' => $this->faker->date,
-            'peserta_lomba' => json_encode([
-                'Participant 1',
-                'Participant 2',
-                'Participant 3',
-            ]),
+            'waktu_pelaksanaan' => $this->faker->date,
+            'tempat_pelaksanaan' => $this->faker->word,
+            'peserta_lomba' => "Participant 1 - D-IV Teknik Sipil, Participant 2 - D-IV Teknik Informatika, Participant 3 - D-IV Teknik Kimia,"
+            
         ];
     }
 }
