@@ -12,22 +12,30 @@
                 <i class="fas fa-solid fa-trophy fa-2x text-gray-300"></i>
             </div>
             <div class="row">
-
+                @foreach ($prestasiData as $prestasi)
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-4 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-1">
                         <div class="card-body">
                             <div class="text-xm font-weight-bold text-primary text-uppercase mb-2">
-                                Lomba Debat Nasional 2023</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">1st Winner</div>
+                                {{ $prestasi->nama_prestasi }}
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">{{ $prestasi->juara }}</div>
+                            <div class="mb-0 text-gray-800 mb-2">
+                                <p class="font-weight-light" style="font-size: .8rem; margin: 0;">{{ $prestasi->deskripsi_lomba }}</p>
+                            </div>
                             <div class="text-xs font-weight-bold text-primary">
-                                Calista Arin - D-IV Teknik Informatika 2023</div>
+                                {{ implode(', ', json_decode($prestasi->peserta_lomba)) }}
+                            </div>
                             <div class="text-xs font-weight-bold text-primary">
-                                Abdul Rozak - D-IV Teknik Informatika 2022</div>
+                                Abdul Rozak - D-IV Teknik Informatika 2022
+                            </div>
                             <div class="text-xs font-weight-bold text-primary">
-                                Bayu Setiwan - D-IV Sistem Informasi Bisnis 2022</div>
+                                Bayu Setiwan - D-IV Sistem Informasi Bisnis 2022
+                            </div>
                             <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
+                                20 Januari 2023 - Surabaya
+                            </div>
                             <div class="row mt-3">
                                 <div class="col-6">
                                     <button class="btn btn-sm btn-warning btn-block" type="button">Edit</button>
@@ -39,90 +47,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-4 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-1">
-                        <div class="card-body">
-                            <div class="text-xm font-weight-bold text-primary text-uppercase mb-2">
-                                Lomba Debat Nasional 2023</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">3st Winner</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Calista Arin - D-IV Teknik Informatika 2023</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Abdul Rozak - D-IV Teknik Informatika 2022</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Bayu Setiwan - D-IV Sistem Informasi Bisnis 2022</div>
-                            <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
-                            <div class="row mt-3">
-                                <div class="col-6">
-                                    <button class="btn btn-sm btn-warning btn-block" type="button">Edit</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-sm btn-danger btn-block" type="button">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-4 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-1">
-                        <div class="card-body">
-                            <div class="text-xm font-weight-bold text-primary text-uppercase mb-2">
-                                Design Web Competition 2022</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">Best Dsign</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Calista Arin - D-IV Teknik Informatika 2023</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Abdul Rozak - D-IV Teknik Informatika 2022</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Bayu Setiwan - D-IV Sistem Informasi Bisnis 2022</div>
-                            <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 april 2022 - Surabaya</div>
-                            <div class="row mt-3">
-                                <div class="col-6">
-                                    <button class="btn btn-sm btn-warning btn-block" type="button">Edit</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-sm btn-danger btn-block" type="button">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-4 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-1">
-                        <div class="card-body">
-                            <div class="text-xm font-weight-bold text-primary text-uppercase mb-2">
-                                Lomba Debat Nasional 2023</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800 mb-2">Grand Champion</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Calista Arin - D-IV Teknik Informatika 2023</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Abdul Rozak - D-IV Teknik Informatika 2022</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Bayu Setiwan - D-IV Sistem Informasi Bisnis 2022</div>
-                            <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
-                            <div class="row mt-3">
-                                <div class="col-6">
-                                    <button class="btn btn-sm btn-warning btn-block" type="button">Edit</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-sm btn-danger btn-block" type="button">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
+                @endforeach
             </div>
 
             <!-- Illustrations -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex justify-content-between">
-                        <h5 class="mt-2 font-weight-bold text-primary">Dewan Perwakilan Mahasiswa (DPM)
+                        <h5 class="mt-2 font-weight-bold text-primary">{{ $detailOki->akronim_oki }}'s Profile
                         </h5>
 
                     <!-- Button trigger modal -->
@@ -169,25 +100,10 @@
                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem"
                             src="/assets-dashboard/img/undraw_posting_photo.svg" alt="..." />
                     </div>
-                    <h3>Dewan Perwakilan Mahasiswa (DPM)</h3>
-                    <p>
-                        [Deskripsi paragraf 1 DPM] Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quod
-                        voluptatibus atque magnam iste quae doloribus officiis, expedita dolore error illo, esse voluptatem
-                        alias doloremque soluta aut
-                        eum hic eaque?
-                    </p>
-                    <p>
-                        [Deskripsi paragraf 2 DPM => Sejarh] Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ducimus aliquam placeat quod illum tenetur eaque amet saepe. Id sunt dolor odio. Dolorum dolores
-                        harum laboriosam ut dolore
-                        praesentium nobis corrupti.
-                    </p>
-                    <p>
-                        [Deskripsi paragraf 2 DPM => Manfaat/Keunggulan] Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Ducimus aliquam placeat quod illum tenetur eaque amet saepe. Id sunt dolor odio. Dolorum
-                        dolores harum laboriosam
-                        ut dolore praesentium nobis corrupti.
-                    </p>
+                    <h3>{{ $detailOki->nama_oki }} ({{ $detailOki->akronim_oki }})</h3>
+                    <p>{{ $detailOki->pengertian }}</p>
+                    <p>{{ $detailOki->sejarah }}</p>
+                    <p>{{ $detailOki->benefit }}</p>
                     <ul>
                         <li><span>Aut eum totam accusantium voluptatem.</span></li>
                         <li><span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
@@ -199,16 +115,17 @@
             <!-- DPM's Activity -->
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-start mb-4">
-                <h1 class="h3 mb-0 mx-4 text-gray-800">DPM's Activity</h1>
+                <h1 class="h3 mb-0 mx-4 text-gray-800">{{ $detailOki->akronim_oki }}'s Activity</h1>
                 <i class="fas fa-solid fa-chart-line fa-2x text-gray-300"></i>
             </div>
             <div class="row">
+                @foreach ($kegiatanData as $kegiatan)
                 <div class="col-lg-4">
                      <!-- Dropdown Card Example -->
                      <div class="card shadow mb-4">
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Musywarah Tertutup</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">{{ $kegiatan->nama_kegiatan }}</h6>
                             <div class="dropdown no-arrow">
                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -227,162 +144,18 @@
                         <!-- Card Body -->
                         <div class="card-body">
                             <div class=" text-primary text-gray-800 mb-2">
-                                Dropdown menus can be placed in the card header in order to extend the functionality
-                            of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                            icon in the card header can be clicked on in order to toggle a dropdown menu.Calista Arin - D-IV Teknik Informatika 2023</div>
+                                {{ $kegiatan->deskripsi_kegiatan }}</div>
                             <div class="text-xs font-weight-bold text-primary">
-                                Attended By: Internal DPM</div>
+                                Attended By: {{ $kegiatan->peserta }}</div>
                             <div class="text-xs font-weight-bold text-primary">
-                                monthly activities</div>
+                                {{ $kegiatan->periode }} activities</div>
                             <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
+                                {{ $kegiatan->waktu_pelaksanaan }} - {{ $kegiatan->tempat_pelaksanaan }}</div>
                         </div>
+                        
                     </div>
                 </div>
-                <div class="col-lg-4">
-                     <!-- Dropdown Card Example -->
-                     <div class="card shadow mb-4">
-                        <!-- Card Header - Dropdown -->
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Musywarah Tertutup</h6>
-                            <div class="dropdown no-arrow">
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                    aria-labelledby="dropdownMenuLink">
-                                    <div class="dropdown-header">Action:</div>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Archive</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div class=" text-primary text-gray-800 mb-2">
-                                Dropdown menus can be placed in the card header in order to extend the functionality
-                            of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                            icon in the card header can be clicked on in order to toggle a dropdown menu.Calista Arin - D-IV Teknik Informatika 2023</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Attended By: Internal DPM</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                monthly activities</div>
-                            <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                     <!-- Dropdown Card Example -->
-                     <div class="card shadow mb-4">
-                        <!-- Card Header - Dropdown -->
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Open Recruitment</h6>
-                            <div class="dropdown no-arrow">
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                    aria-labelledby="dropdownMenuLink">
-                                    <div class="dropdown-header">Action:</div>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Archive</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div class=" text-primary text-gray-800 mb-2">
-                                Dropdown menus can be placed in the card header in order to extend the functionality
-                            of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                            icon in the card header can be clicked on in order to toggle a dropdown menu.Calista Arin - D-IV Teknik Informatika 2023</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Attended By: Mahasiswa Baru</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Annual activities</div>
-                            <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                     <!-- Dropdown Card Example -->
-                     <div class="card shadow mb-4">
-                        <!-- Card Header - Dropdown -->
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Musywarah Tertutup</h6>
-                            <div class="dropdown no-arrow">
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                    aria-labelledby="dropdownMenuLink">
-                                    <div class="dropdown-header">Action:</div>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Archive</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div class=" text-primary text-gray-800 mb-2">
-                                Dropdown menus can be placed in the card header in order to extend the functionality
-                            of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                            icon in the card header can be clicked on in order to toggle a dropdown menu.Calista Arin - D-IV Teknik Informatika 2023</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Attended By: Internal DPM</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                monthly activities</div>
-                            <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                     <!-- Dropdown Card Example -->
-                     <div class="card shadow mb-4">
-                        <!-- Card Header - Dropdown -->
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Musywarah Tertutup</h6>
-                            <div class="dropdown no-arrow">
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                    aria-labelledby="dropdownMenuLink">
-                                    <div class="dropdown-header">Action:</div>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Archive</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div class=" text-primary text-gray-800 mb-2">
-                                Dropdown menus can be placed in the card header in order to extend the functionality
-                            of a basic card. In this dropdown card example, the Font Awesome vertical ellipsis
-                            icon in the card header can be clicked on in order to toggle a dropdown menu.Calista Arin - D-IV Teknik Informatika 2023</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                Attended By: Internal DPM</div>
-                            <div class="text-xs font-weight-bold text-primary">
-                                monthly activities</div>
-                            <div class="text-xs font-weight-bold text-primary mt-2">
-                                20 Januari 2023 - Surabaya</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <!-- DataTales Example -->

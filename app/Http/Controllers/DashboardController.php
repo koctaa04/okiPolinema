@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\View\View;
+use App\Models\KegiatanOkis;
+use App\Models\Okis;
+use App\Models\PrestasiOkis;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class DashboardController extends Controller
 {
@@ -14,8 +17,23 @@ class DashboardController extends Controller
     }
 
     function showDetailOki(string $id) : View {
+        $detailOki = Okis::find($id);
+        if ($detailOki->kategori_oki == 1) {
+            $title = 'detail_lt';
+        }else if ($detailOki->kategori_oki == 2) {
+            $title = 'detail_hmj';
+        }else if ($detailOki->kategori_oki == 3) {
+            $title = 'detail_ukm';
+        }
+
+        $prestasiData = PrestasiOkis::all();
+        $kegiatanData = KegiatanOkis::all();
+
         return view('dashboard.detailOki', [
-            'title' => $id
+            'title' => $title,
+            'detailOki'=> $detailOki,
+            'prestasiData' => $prestasiData,
+            'kegiatanData' => $kegiatanData
         ]);
     }
 }
