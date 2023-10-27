@@ -12,13 +12,14 @@ class OkisFactory extends Factory
     {
         return [
             'nama_oki' => $this->faker->word,
+            'slug' => $this->faker->word,
             'akronim_oki' => $this->faker->word,
             'struktur_divisi' => 'Sample Structure.jpg',
-            'sejarah' => 'BEM dibentuk pada tanggal 20 Januari 2023. lorem ipsum',
-            'pengertian' => 'DPM adalah Lorem ipsum...',
+            'sejarah' => 'OKI dibentuk pada tanggal 20 Januari 2023. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minima voluptate beatae quod at, voluptatum possimus eligendi assumenda laudantium molestias?',
+            'pengertian' => 'OKI adalah Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minima voluptate beatae quod at, voluptatum possimus eligendi assumenda laudantium molestias?',
             'benefit' => json_encode(['Banyak yang akan didapatkan, Contohnya antara lain; punya jiwa kepemimpinan, belajar cara berkolaborasi']),
             'info_terkini' => 'OPEN RECRUITMENT ON JULY 2023',
-            'kategori_oki' => '1'
+            'kategori_oki' => fake()->numberBetween(1,3)
         ];
     }
 }

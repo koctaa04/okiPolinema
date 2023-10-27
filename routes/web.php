@@ -3,7 +3,6 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +23,5 @@ Route::get('/register{id}', [HomepageController::class, 'showRegister'])->name('
 Route::get('/login', [HomepageController::class, 'showLogin'])->name('homepage.login');
 
 // DASHBOARD
-Route::get('/dashboard', function () {
-    
-});
 Route::get('/dashboard', [DashboardController::class, 'showIndex'])->name('dashboard');
-Route::get('/dashboard/detailOki/{id}', [DashboardController::class, 'showDetailOki'])->name('dashboard.detaillOki');
+Route::get('/dashboard/detailOki/{id}', [DashboardController::class, 'showDetailOki'])->name('dashboard.detailOki');

@@ -53,8 +53,8 @@
         <div id="lt" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Consist of:</h6>
-                <a class="collapse-item" href="/dashboard/detailOki/1">DPM</a>
-                <a class="collapse-item" href="/dashboard/detailOki/2">BEM</a>
+                <a class="collapse-item" href="/dashboard/detailOki/dpm">DPM</a>
+                <a class="collapse-item" href="/dashboard/detailOki/bem">BEM</a>
             </div>
         </div>
     </li>
@@ -70,13 +70,13 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Consist of:</h6>
-                <a class="collapse-item" href="/dashboard/detailOki/3">HMM</a>
-                <a class="collapse-item" href="/dashboard/detailOki/4">HMA</a>
-                <a class="collapse-item" href="/dashboard/detailOki/5">HME</a>
-                <a class="collapse-item" href="/dashboard/detailOki/6">HMTI</a>
-                <a class="collapse-item" href="/dashboard/detailOki/7">HIMANIA</a>
-                <a class="collapse-item" href="/dashboard/detailOki/8">HMS</a>
-                <a class="collapse-item" href="/dashboard/detailOki/9">HMTK</a>
+                <a class="collapse-item" href="/dashboard/detailOki/hmm">HMM</a>
+                <a class="collapse-item" href="/dashboard/detailOki/hma">HMA</a>
+                <a class="collapse-item" href="/dashboard/detailOki/hme">HME</a>
+                <a class="collapse-item" href="/dashboard/detailOki/hmti">HMTI</a>
+                <a class="collapse-item" href="/dashboard/detailOki/himania">HIMANIA</a>
+                <a class="collapse-item" href="/dashboard/detailOki/hms">HMS</a>
+                <a class="collapse-item" href="/dashboard/detailOki/hmtk">HMTK</a>
             </div>
         </div>
     </li>
@@ -92,19 +92,19 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Consist of:</h6>
-                <a class="collapse-item" href="/dashboard/detailOki/10">PP</a>
-                <a class="collapse-item" href="/dashboard/detailOki/11">KMK St. Yohanes</a>
-                <a class="collapse-item" href="/dashboard/detailOki/12">KK Talita Kum</a>
-                <a class="collapse-item" href="/dashboard/detailOki/13">Rispol</a>
-                <a class="collapse-item" href="/dashboard/detailOki/14">OPA Ganendra Giri</a>
-                <a class="collapse-item" href="/dashboard/detailOki/15">PL FM</a>
-                <a class="collapse-item" href="/dashboard/detailOki/16">LPM Kompen</a>
-                <a class="collapse-item" href="/dashboard/detailOki/17">SATMENWA</a>
-                <a class="collapse-item" href="/dashboard/detailOki/18">Olah Raga</a>
-                <a class="collapse-item" href="/dashboard/detailOki/19">PASTI</a>
-                <a class="collapse-item" href="/dashboard/detailOki/20">BKM</a>
-                <a class="collapse-item" href="/dashboard/detailOki/21">USMA</a>
-                <a class="collapse-item" href="/dashboard/detailOki/22">Seni Theatrisic</a>
+                <a class="collapse-item" href="/dashboard/detailOki/PP">PP</a>
+                <a class="collapse-item" href="/dashboard/detailOki/st_yohanes">KMK St. Yohanes</a>
+                <a class="collapse-item" href="/dashboard/detailOki/talitakum">KK Talita Kum</a>
+                <a class="collapse-item" href="/dashboard/detailOki/rispol">Rispol</a>
+                <a class="collapse-item" href="/dashboard/detailOki/opa">OPA Ganendra Giri</a>
+                <a class="collapse-item" href="/dashboard/detailOki/plfm">PL FM</a>
+                <a class="collapse-item" href="/dashboard/detailOki/lpm_kompen">LPM Kompen</a>
+                <a class="collapse-item" href="/dashboard/detailOki/satmenwa">SATMENWA</a>
+                <a class="collapse-item" href="/dashboard/detailOki/olahraga">Olah Raga</a>
+                <a class="collapse-item" href="/dashboard/detailOki/pasti">PASTI</a>
+                <a class="collapse-item" href="/dashboard/detailOki/bkm">BKM</a>
+                <a class="collapse-item" href="/dashboard/detailOki/usma">USMA</a>
+                <a class="collapse-item" href="/dashboard/detailOki/seni">Seni Theatrisic</a>
             </div>
         </div>
     </li>

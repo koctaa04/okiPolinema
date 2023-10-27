@@ -12,6 +12,7 @@ class Okis extends Model
     protected $table = 'okis_table';
 
     protected $fillable = [
+        'slug',
         'nama_oki',
         'akronim_oki',
         'struktur_divisi',

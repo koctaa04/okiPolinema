@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         DB::table('okis_table')->insert([
+            'slug' => 'dpm',
             'nama_oki' => 'Dewan Perwakilan Mahasiswa',
             'akronim_oki' => 'DPM',
             'struktur_divisi' => 'Sample Structure.jpg',
@@ -38,6 +39,7 @@ class DatabaseSeeder extends Seeder
             'kategori_oki' => '1',
         ]);
         DB::table('okis_table')->insert([
+            'slug' => 'bem',
             'nama_oki' => 'Badan eksekutif Mahasiswa',
             'akronim_oki' => 'BEM',
             'struktur_divisi' => 'Sample Structure.jpg',
@@ -47,10 +49,32 @@ class DatabaseSeeder extends Seeder
             'info_terkini' => 'OPEN RECRUITMENT ON SEPTEMBER 2023',
             'kategori_oki' => '1',
         ]);
+        DB::table('okis_table')->insert([
+            'slug' => 'hmm',
+            'nama_oki' => 'Himpunan Mahasiswa Mesin',
+            'akronim_oki' => 'HMM',
+            'struktur_divisi' => 'Sample Structure.jpg',
+            'sejarah' => 'Sejarah HMJ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
+            'pengertian' => 'HMJ adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
+            'benefit' => json_encode(['Manfaat/Keunggulan BEM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.']),
+            'info_terkini' => 'OPEN RECRUITMENT ON SEPTEMBER 2023',
+            'kategori_oki' => fake()->numberBetween(1,3),
+        ]);
+        DB::table('okis_table')->insert([
+            'slug' => 'hmti ',
+            'nama_oki' => 'Himpunan Mahasiswa Teknologi informasi ',
+            'akronim_oki' => 'HMTI',
+            'struktur_divisi' => 'Sample Structure.jpg',
+            'sejarah' => 'Sejarah HMJ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
+            'pengertian' => 'HMJ adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
+            'benefit' => json_encode(['Manfaat/Keunggulan BEM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.']),
+            'info_terkini' => 'OPEN RECRUITMENT ON SEPTEMBER 2023',
+            'kategori_oki' => fake()->numberBetween(1,3),
+        ]);
 
         MemberOkis::factory(10)->create();
         User::factory(10)->create();
-        Okis::factory(10)->create();
+        Okis::factory(5)->create();
         KegiatanOkis::factory(10)->create();
         PrestasiOkis::factory(10)->create();
 

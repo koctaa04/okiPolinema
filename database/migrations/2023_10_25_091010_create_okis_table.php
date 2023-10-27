@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('okis_table', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->string('nama_oki');
             $table->string('akronim_oki');
             $table->string('struktur_divisi');

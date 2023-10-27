@@ -18,8 +18,16 @@ class DashboardController extends Controller
         ]);
     }
 
-    function showDetailOki(string $id) : View {
-        $detailOki = Okis::find($id);
+    function showDetailOki(string $slug) : View {
+
+        $detailOki = Okis::where('slug', $slug)->first();
+        if (!$detailOki) {
+            // Redirect to the dashboard if detailOki is not found.
+            return view('dashboard.404', [
+                'title' => 'dashboard'
+            ]);
+        }
+        $id = $detailOki->id;
         if ($detailOki->kategori_oki == 1) {
             $title = 'detail_lt';
         }else if ($detailOki->kategori_oki == 2) {
