@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KegiatanOkis;
 use App\Models\Okis;
+use App\Models\User;
+use App\Models\KegiatanOkis;
 use App\Models\PrestasiOkis;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 
 class DashboardController extends Controller
@@ -28,12 +30,16 @@ class DashboardController extends Controller
 
         $prestasiData = PrestasiOkis::where('id_oki', $id)->get();
         $kegiatanData = KegiatanOkis::where('id_oki', $id)->get();
-
+        $memberData = User::where('pilihan_oki', $id)
+        ->join('member_okis', 'users.nim', '=', 'member_okis.nim')
+        ->get();
+            
         return view('dashboard.detailOki', [
             'title' => $title,
             'detailOki'=> $detailOki,
             'prestasiData' => $prestasiData,
-            'kegiatanData' => $kegiatanData
+            'kegiatanData' => $kegiatanData,
+            'memberData' => $memberData
         ]);
     }
 }

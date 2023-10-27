@@ -5,13 +5,20 @@
     <div class="container-fluid">
         <!-- Page Heading -->
         <div class="mb-4">
-            <!-- DPM's achievement -->
+            <!-- achievement -->
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-start mb-4">
-                <h1 class="h3 mb-0 mx-4 text-gray-800">DPM's Achievement</h1>
+                <h1 class="h3 mb-0 mx-4 text-gray-800">{{ $detailOki->akronim_oki }}'s Achievement</h1>
                 <i class="fas fa-solid fa-trophy fa-2x text-gray-300"></i>
             </div>
-            <div class="row">
+            <div class="row mb-3">
+                @if ($prestasiData->isEmpty()) 
+                    <div class="col-12">
+                        <div class="alert alert-secondary" role="alert">
+                            Data Prestasi Does not exist!!
+                        </div>
+                    </div>
+                @endif
                 @foreach ($prestasiData as $prestasi)
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-4 col-md-6 mb-4">
@@ -176,13 +183,20 @@
                 </div>
             </div>
 
-            <!-- DPM's Activity -->
+            <!-- Activity -->
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-start mb-4">
                 <h1 class="h3 mb-0 mx-4 text-gray-800">{{ $detailOki->akronim_oki }}'s Activity</h1>
                 <i class="fas fa-solid fa-chart-line fa-2x text-gray-300"></i>
             </div>
-            <div class="row">
+            <div class="row mb-3">
+                @if ($kegiatanData->isEmpty()) 
+                    <div class="col-12">
+                        <div class="alert alert-secondary" role="alert">
+                            Data Prestasi Does not exist!!
+                        </div>
+                    </div>
+                @endif
                 @foreach ($kegiatanData as $kegiatan)
                 <div class="col-lg-4">
                      <!-- Dropdown Card Example -->
@@ -225,7 +239,7 @@
             <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3 d-sm-flex align-items-center justify-content-start mb-4">
-                        <h5 class="m-0 mx-4 font-weight-bold text-primary">DPM's Member</h5>
+                        <h5 class="m-0 mx-4 font-weight-bold text-primary">{{ $detailOki->akronim_oki }}'s Member</h5>
                         <i class="fas fa-solid fa-users fa-2x text-gray-300"></i>
                     </div>
                     <div class="card-body">
@@ -252,46 +266,129 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
+                                    @foreach ($memberData as $member)
                                     <tr>
-                                        <td>234172999</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>2023</td>
+                                        <td>{{ $member->nim }}</td>
+                                        <td>{{ $member->nickname }}</td>
+                                        <td>{{ $member->jabatan_oki }}</td>
+                                        <td>{{ $member->angkatan }}</td>
                                         <td>
                                             <span class="badge badge-pill badge-success">Active</span>
                                         </td>
                                         <td class="d-flex justify-content-around">
-                                            <a href="#" class="btn btn-info btn-circle">
+                                            <!-- Button Information -->
+                                            <button data-toggle="modal" data-target="#infoMember" class="btn btn-info btn-circle">
                                                 <i class="fas fa-info-circle"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-warning btn-circle">
+                                            </button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="infoMember" tabindex="-1" aria-labelledby="infoMemberLabel">
+                                                    <div class="modal-dialog">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="infoMemberLabel">Detail Information of {{ $member->fullname }}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <table class="p-2 table table-striped table-borderless">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>NIM</td>
+                                                                        <td>{{ $member->nim }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Born Date</td>
+                                                                        <td>{{ $member->born_date }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Jurusan</td>
+                                                                        <td>{{ $member->jurusan }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Program Studi</td>
+                                                                        <td>{{ $member->program_studi }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Asal</td>
+                                                                        <td>{{ $member->asal }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Angkatan</td>
+                                                                        <td>{{ $member->angkatan }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Jabatan</td>
+                                                                        <td>{{ $member->jabatan_oki }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Tahun Jabatan</td>
+                                                                        <td>2050</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            <!-- Button Edit -->
+                                            <button data-toggle="modal" data-target="#editMemberOki" class="btn btn-warning btn-circle">
                                                 <i class="fas fa-pen"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-danger btn-circle">
+                                            </button>
+                                            <!-- Modal -->
+                                            <div class="modal  fade" id="editMemberOki" tabindex="-1" aria-labelledby="editMemberOkiLabel"
+                                            aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="editMemberOkiLabel">Edit {{ $detailOki->akronim_oki }}'s Member</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <form method="post" action="/dashboard/editMember/{{ $member->nim }}">
+                                                        @csrf
+                                                        <div class="modal-body">
+                                                            <div class="row mb-3">
+                                                                <div class="col-6">
+                                                                    <label for="nim">NIM </label>
+                                                                    <input type="text" class="form-control" name="nim" id="nim"
+                                                                        value="{{ $member->nim }}" disabled/>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <label for="fullname">FullName</label>
+                                                                    <input type="text" class="form-control" name="fullname" id="fullname"
+                                                                        value="{{ $member->fullname }}" disabled/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-6">
+                                                                    <label for="jabatan_oki">Jabatan </label>
+                                                                    <input type="text" class="form-control" name="jabatan_oki" id="jabatan_oki"
+                                                                        placeholder="Ketua Umum" value="{{ $member->jabatan_oki }}"/>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <label for="tahun_jabat">Tahun Jabatan</label>
+                                                                    <input type="text" class="form-control" name="tahun_jabat" id="tahun_jabat"
+                                                                        placeholder="2023" value="2050"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <button href="#" class="btn btn-danger btn-circle">
                                                 <i class="fas fa-trash"></i>
-                                            </a>
+                                            </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>234172999</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>2018</td>
-                                        <td>
-                                            <span class="badge badge-pill badge-secondary">Alumnus</span>
-                                        </td>
-                                        <td class="d-flex justify-content-around">
-                                            <a href="#" class="btn btn-info btn-circle">
-                                                <i class="fas fa-info-circle"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-warning btn-circle">
-                                                <i class="fas fa-pen"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-danger btn-circle">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
