@@ -50,6 +50,28 @@ class DashboardController extends Controller
             'memberData' => $memberData
         ]);
     }
+    
+    public function editProfileOki(Request $request, Okis $okis) {
+        $data = $request->validate([
+            'nama_oki' => 'required|string|max:255',
+            'akronim_oki' => 'required|string|max:255',
+            'pengertian' => 'required|string|max:255',
+            'sejarah' => 'required|string|max:255',
+            'benefit' => 'required|string|max:255',
+            'info_terkini' => 'required|string|max:255',
+        ]);
+    
+        // Use the slug to find the Okis model you want to update
+        $okis = Okis::where('slug', $request->slug)->first();
+    
+        if ($okis) {
+            $okis->update($data);
+            return redirect("/dashboard/detailOki/{$request->slug}")->with('success', "{$request->nama_oki}'s profile updated successfully");
+        } else {
+            return redirect()->back()->with('error', "{$request->nama_oki} not found");
+        }
+    }
+    
 
     
 }

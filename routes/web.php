@@ -25,6 +25,8 @@ Route::get('/detailOki/{slug}', [HomepageController::class, 'showDetailOki'])->n
 // DASHBOARD
 Route::get('/dashboard', [DashboardController::class, 'showIndex'])->name('dashboard');
 Route::get('/dashboard/detailOki/{slug}', [DashboardController::class, 'showDetailOki'])->name('dashboard.detailOki');
+Route::put('/dashboard/editProfileOki/{id}', [DashboardController::class, 'editProfileOki'])->name('dashboard.editProfileOki');
+
 
 // AUTH
 Route::get('/login', [AuthHomepageCoontroller::class, 'showLoginForm'])->name('homepage.login');

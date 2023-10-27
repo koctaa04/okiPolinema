@@ -6,6 +6,11 @@
         <!-- Page Heading -->
         <div class="mb-4">
             <!-- achievement -->
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-start mb-4">
                 <h1 class="h3 mb-0 mx-4 text-gray-800">{{ $detailOki->akronim_oki }}'s Achievement</h1>
@@ -113,21 +118,23 @@
                         </h5>
 
                     <!-- Button trigger modal -->
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#editBiodataOKI">Edit</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#editProfileOKI">Edit</button>
                     <!-- Modal -->
-                    <div class="modal  fade" id="editBiodataOKI" tabindex="-1" aria-labelledby="editBiodataOKILabel"
+                    <div class="modal  fade" id="editProfileOKI" tabindex="-1" aria-labelledby="editProfileOKILabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="editBiodataOKILabel">Edit {{ $detailOki->akronim_oki }}'s Profile</h5>
+                                    <h5 class="modal-title" id="editProfileOKILabel">Edit {{ $detailOki->akronim_oki }}'s Profile</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form method="post" action="/dashboard/editBiodata/{{ $detailOki->id }}">
+                                <form method="post" action="{{ route('dashboard.editProfileOki', $detailOki->id) }}">
                                 @csrf
+                                @method('PUT')
                                 <div class="modal-body">
+                                        <input type="hidden" name="slug" value="{{ $detailOki->slug }}">
                                         <div class="form-group">
                                             <label for="nama_oki">Nama OKI</label>
                                             <input type="text" class="form-control" name="nama_oki" id="nama_oki"
@@ -137,6 +144,10 @@
                                             <label for="akronim_oki">Akronim OKI</label>
                                             <input type="text" class="form-control" name="akronim_oki" id="akronim_oki"
                                                 placeholder="Example : BEM" value="{{ $detailOki->akronim_oki }}" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pengertian">Pengertian OKI</label>
+                                            <textarea class="form-control" name="pengertian" id="pengertian" rows="3">{{ $detailOki->pengertian }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="sejarah">Sejarah OKI</label>
