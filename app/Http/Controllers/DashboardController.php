@@ -50,4 +50,6 @@ class DashboardController extends Controller
             'memberData' => $memberData
         ]);
     }
+
+    
 }

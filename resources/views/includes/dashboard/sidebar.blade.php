@@ -119,7 +119,7 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard/faq">
+        <a class="nav-link disabled" href="/dashboard/faq">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>FAQ</span></a>
     </li>

@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             'struktur_divisi' => 'Sample Structure.jpg',
             'sejarah' => 'Sejarah DPM Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'pengertian' => 'DPM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
-            'benefit' => json_encode(['Manfaat/Keunggulan DPM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.']),
+            'benefit' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'info_terkini' => 'OPEN RECRUITMENT ON JULY 2023',
             'kategori_oki' => '1',
         ]);
@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
             'struktur_divisi' => 'Sample Structure.jpg',
             'sejarah' => 'Sejarah BEM Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'pengertian' => 'BEM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
-            'benefit' => json_encode(['Manfaat/Keunggulan BEM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.']),
+            'benefit' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'info_terkini' => 'OPEN RECRUITMENT ON SEPTEMBER 2023',
             'kategori_oki' => '1',
         ]);
@@ -56,9 +56,9 @@ class DatabaseSeeder extends Seeder
             'struktur_divisi' => 'Sample Structure.jpg',
             'sejarah' => 'Sejarah HMJ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'pengertian' => 'HMJ adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
-            'benefit' => json_encode(['Manfaat/Keunggulan BEM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.']),
+            'benefit' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'info_terkini' => 'OPEN RECRUITMENT ON SEPTEMBER 2023',
-            'kategori_oki' => fake()->numberBetween(1,3),
+            'kategori_oki' => '2',
         ]);
         DB::table('okis_table')->insert([
             'slug' => 'hmti ',
@@ -67,9 +67,21 @@ class DatabaseSeeder extends Seeder
             'struktur_divisi' => 'Sample Structure.jpg',
             'sejarah' => 'Sejarah HMJ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'pengertian' => 'HMJ adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
-            'benefit' => json_encode(['Manfaat/Keunggulan BEM adalah Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.']),
+            'benefit' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, asperiores cupiditate corrupti sunt assumenda ad? Rem, quibusdam molestiae! Quam, rem.',
             'info_terkini' => 'OPEN RECRUITMENT ON SEPTEMBER 2023',
-            'kategori_oki' => fake()->numberBetween(1,3),
+            'kategori_oki' => '2',
+        ]);
+        DB::table('kategori_okis')->insert([
+            'nama_kategori' => 'Lembaga Tinggi',
+            'akronim_kategori' => 'Lembaga Tinggi',
+        ]);
+        DB::table('kategori_okis')->insert([
+            'nama_kategori' => 'Himpunan Mahasiswa Jurusan',
+            'akronim_kategori' => 'Himpunan Mahasiswa Jurusan',
+        ]);
+        DB::table('kategori_okis')->insert([
+            'nama_kategori' => 'Unit Kegiatan Mahasiswa',
+            'akronim_kategori' => 'Unit Kegiatan Mahasiswa',
         ]);
 
         MemberOkis::factory(10)->create();

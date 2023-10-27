@@ -141,25 +141,16 @@
 
         <div class="row gy-4 d-flex justify-content-around">
 
+          @foreach ($dataLt as $lt)
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/storage-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Dewan Perwakilan Mahasiswa</a></h3>
-              <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+                <img src="/assets-homepage/img/lembaga_tinggi.png" alt="" class="img-fluid">
+              <h3><a href="/detailOki/{{ $lt->slug }}" class="stretched-link">{{ $lt->nama_oki }}</a></h3>
+              <p>{{ $lt->pengertian }}</p>
             </div>
           </div><!-- End Card Item -->
+          @endforeach
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/logistics-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Badan Eksekutif Mahasiswa</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div><!-- End Card Item -->
         </div>
         <a href="/oki#ltCardItems" class="float-end mt-2 readmore stretched-link"><span>Show More </span><i class="bi bi-arrow-right"></i></a>
 
@@ -169,35 +160,15 @@
         </div>
 
         <div class="row gy-4">
+          @foreach ($dataHmj as $hmj)
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/storage-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Himpunan Mahasiswa Mesin</a></h3>
-              <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+                <img src="/assets-homepage/img/hmj.png" alt="" class="img-fluid">
+              <h3><a href="/detailOki/{{ $hmj->slug }}" class="stretched-link">{{ $hmj->nama_oki }}</a></h3>
+              <p>{{ $hmj->pengertian }}</p>
             </div>
           </div><!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/logistics-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Himpunan Mahasiswa Akuntansi</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/logistics-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Himpunan Mahasiswa Elektro</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div><!-- End Card Item -->
+          @endforeach
         </div>
         <a href="/oki#hmjCardItems" class="float-end mt-2 readmore stretched-link"><span>Show More </span><i class="bi bi-arrow-right"></i></a>
         
@@ -208,45 +179,15 @@
         </div>
 
         <div class="row gy-4">
+          @foreach ($dataUkm as $ukm)
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/storage-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Pendidikan dan Penalaran</a></h3>
-              <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+                <img src="assets-homepage/img/ukm.png" alt="" class="img-fluid">
+              <h3><a href="/detailOki/{{ $ukm->slug }}" class="stretched-link">{{ $ukm->nama_oki }}</a></h3>
+              <p>{{ $ukm->pengertian }}</p>
             </div>
           </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/logistics-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">KMK St.Yohanes</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/logistics-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Kerohanian Kristen Talita Kum</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div><!-- End Card Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets-homepage/img/logistics-service.jpg" alt="" class="img-fluid">
-              </div>
-              <h3><a href="service-details.html" class="stretched-link">Rohis Polinema</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div><!-- End Card Item -->
+          @endforeach
         </div>
         <a href="/oki#ukmCardItems" class="float-end mt-2 readmore stretched-link"><span>Show More </span><i class="bi bi-arrow-right"></i></a>
       </div>

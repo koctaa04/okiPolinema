@@ -16,7 +16,7 @@
           <li><a href="/about" class="{{ $title === 'about' ? 'active' : '' }}">About</a></li>
           <li><a href="/oki" class="{{ $title === 'oki' ? 'active' : '' }}">OKI</a></li>
         </ul>
-        <a class="get-a-quote" href="/register">Register</a>
+        <a class="get-a-quote" href="/login">login</a>
       </nav><!-- .navbar -->
 
     </div>

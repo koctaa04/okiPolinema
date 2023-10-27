@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('struktur_divisi');
             $table->string('sejarah');
             $table->string('pengertian');
-            $table->json('benefit');
+            $table->string('benefit');
             $table->string('info_terkini');
             $table->string('kategori_oki');
             $table->timestamps();

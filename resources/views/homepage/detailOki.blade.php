@@ -1,9 +1,7 @@
 @extends('layouts.layouts-homepage')
 
 @section('content')
-
   <main id="main">
-
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
       <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
@@ -34,32 +32,27 @@
 
           <div class="col-lg-4">
             <div class="services-list">
-              <a href="#" class="active">Lembaga Tinggi</a>
-              <a href="#">Himpunan Mahasiswa Jurusan</a>
-              <a href="#">Unit Kegiatan Mahasiswa</a>
+              <a href="#" class="{{ $detailOki->kategori_oki === '1' ? 'active' : '' }}">Lembaga Tinggi</a>
+              <a href="#" class="{{ $detailOki->kategori_oki === '2' ? 'active' : '' }}">Himpunan Mahasiswa Jurusan</a>
+              <a href="#" class="{{ $detailOki->kategori_oki === '3' ? 'active' : '' }}">Unit Kegiatan Mahasiswa</a>
             </div>
 
-            <h4>[Kategori OKI]</h4>
-            <p>[Keterengan Kategri OKI] Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
+            <h4>{{ $detailOki->nama_kategori }}</h4>
+            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
           </div>
 
           <div class="col-lg-8">
-            <img src="assets/img/service-details.jpg" alt="" class="img-fluid services-img">
-            <h3>[Nama OKI] Temporibus doloreas</h3>
-            <a class="btn btn-primary mt-2 mb-2" href="get-a-quote.html">Join Now !</a>
-            <p>
-              [Deskripsi OKI ]Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
-            </p>
-            <p>
-              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
-            </p>
-            <p>
-              [Keunggulan / Manfaaat] Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
-            </p>
+            <!-- Gambar Struktur Organisasi -->
+            <img src="/assets-homepage/img/undraw_posting_photo.svg" alt="" class="img-fluid services-img">
+            <h3>{{ $detailOki->nama_oki }}</h3>
+            <a class="btn btn-primary mt-2 mb-3" href="get-a-quote.html">Join Now !</a>
+            <p>{{$detailOki->pengertian}}</p>
+            <p>{{ $detailOki->sejarah }}</p>
+            <p>{{ $detailOki->benefit }}</p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+              @foreach($benefits as $benefit)
+                  <li><i class="bi bi-check-circle"></i> <span>{{ $benefit }}</span></li>
+              @endforeach
             </ul>
           </div>
 

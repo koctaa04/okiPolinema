@@ -17,7 +17,7 @@ class OkisFactory extends Factory
             'struktur_divisi' => 'Sample Structure.jpg',
             'sejarah' => 'OKI dibentuk pada tanggal 20 Januari 2023. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minima voluptate beatae quod at, voluptatum possimus eligendi assumenda laudantium molestias?',
             'pengertian' => 'OKI adalah Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minima voluptate beatae quod at, voluptatum possimus eligendi assumenda laudantium molestias?',
-            'benefit' => json_encode(['Banyak yang akan didapatkan, Contohnya antara lain; punya jiwa kepemimpinan, belajar cara berkolaborasi']),
+            'benefit' => 'punya jiwa kepemimpinan, belajar cara berkolaborasi',
             'info_terkini' => 'OPEN RECRUITMENT ON JULY 2023',
             'kategori_oki' => fake()->numberBetween(1,3)
         ];
